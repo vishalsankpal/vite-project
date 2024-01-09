@@ -9,7 +9,7 @@ export default class Form extends Component {
         email: "",
         password: "",
         selectedOption: "",
-        age: "",
+        age: "0",
         interest: {
           sports: false,
           music: false,
@@ -108,8 +108,7 @@ export default class Form extends Component {
     const errors = {};
     let isError = false;
     Object.keys(this.state.data).forEach((item) => {
-      console.log(this.state.data[item].interest === "object");
-      if (this.state.data[item] !== "object") {
+      if (typeof this.state.data[item] !== "object") {
         if (this.state.data[item].trim() === "") {
           errors[item] = "Please fill out this field";
           isError = true;
@@ -202,6 +201,7 @@ export default class Form extends Component {
               type="range"
               min={0}
               max={100}
+              value={this.state.data.age}
               onChange={this.handleSliderChange}
             />
             <p>Value: {this.state.data.age}</p>
@@ -214,6 +214,7 @@ export default class Form extends Component {
             <h2>password: {this.state.data.password}</h2>
             <h2>email: {this.state.data.email}</h2>
             <h2>Gender:{this.state.data.selectedOption}</h2>
+            <h2>age: {this.state.data.age}</h2>
           </div>
         )}
       </div>
