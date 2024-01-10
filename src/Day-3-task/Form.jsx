@@ -19,9 +19,18 @@ export default class Form extends Component {
       submit: false,
     };
   }
-
+  handlerInputChnage = (e) => {
+    const { value, name } = e.preventDefault();
+    this.setState((prev) => ({
+      ...prev,
+      data: {
+        ...prev.data,
+        [name]: value,
+      },
+    }));
+  };
   namefieldHandler = (e) => {
-    const { value } = e.target;
+    const { value, name } = e.target;
     this.setState({
       data: {
         name: value,
@@ -141,7 +150,8 @@ export default class Form extends Component {
               id="name"
               name="name"
               value={data.name}
-              onChange={this.namefieldHandler}
+              // onChange={this.namefieldHandler}
+              onChange={this.handlerInputChnage}
             />
             <span>{this.state.data.name}</span>
             {error.name && <span>{error.name}</span>}
@@ -153,7 +163,8 @@ export default class Form extends Component {
               id="email"
               name="email"
               value={data.email}
-              onChange={this.emailfieldHandler}
+              // onChange={this.emailfieldHandler}
+              onChange={this.handlerInputChnage}
             />
             {error.email && <span>{error.email}</span>}
           </div>
@@ -164,7 +175,8 @@ export default class Form extends Component {
               id="password"
               name="password"
               value={data.password}
-              onChange={this.passwordfieldHandler}
+              // onChange={this.passwordfieldHandler}
+              onChange={this.handlerInputChnage}
             />
             {error.password && <span>{error.password}</span>}
           </div>
@@ -176,7 +188,12 @@ export default class Form extends Component {
               onChange={this.genderHandler}
             />{" "}
             Male
-            <input type="radio" value="Female" onChange={this.genderHandler} />
+            <input
+              type="radio"
+              value="Female"
+              // onChange={this.genderHandler}
+              onChange={this.handlerInputChnage}
+            />
             Female
             {error.gender && <span>{error.gender}</span>}
           </div>
