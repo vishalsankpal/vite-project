@@ -3,7 +3,8 @@ import CorrectedForm from "./Day-3-task/CorrectedForm";
 //import Greetings from "./Day-2-component/Greetings";
 //import Parent from "./Day-2-component/Parent";
 import Form from "./Day-3-task/Form";
-import TodoWrapper from "./Todo/TodoWrapper";
+import Hobbies from "./Day-4/Hobbies";
+// import TodoWrapper from "./Todo/TodoWrapper";
 //import ClassBased from "./Day-3/ClassBased";
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
       <ClassBased name="vishal" /> */}
       {/* <Form />
       <CorrectedForm /> */}
-      <TodoWrapper />
+      {/* <TodoWrapper /> */}
+      <Hobbies />
     </>
   );
 }
