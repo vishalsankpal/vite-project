@@ -16,7 +16,6 @@ function TodoWrapper() {
         isEditing: false,
       },
     ]);
-    console.log(todos);
   };
   const toggle = (id) => {
     setTodos(

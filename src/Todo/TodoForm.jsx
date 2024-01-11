@@ -4,10 +4,10 @@ function TodoForm({ addTodo }) {
   const [value, setValue] = useState("");
   const submitHandler = (e) => {
     e.preventDefault();
-    addTodo(value);
-    setValue("");
-    // if (value.trim() !== "") {
-    // }
+    if (value.trim() !== "") {
+      addTodo(value);
+      setValue("");
+    }
   };
   return (
     <form onSubmit={submitHandler}>
